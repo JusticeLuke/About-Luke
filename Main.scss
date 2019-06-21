@@ -1,0 +1,58 @@
+//Overriding Styles
+$primary: #ffea74;
+$dark: #372a8c;
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Required
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/dropdown";
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/nav";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/button-group";
+@import "node_modules/bootstrap/scss/list-group";
+@import "node_modules/bootstrap/scss/tables";
+@import url('http://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+@function theme-color($key: "dark") {
+    @return map-get($theme-colors, $key);
+}
+
+@function theme-color-level($color-name: "dark", $level: 0) {
+    $color: theme-color($color-name);
+    $color-base: if($level > 0, #000, #fff);
+    $level: abs($level);
+
+    @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
+body {
+    background-color: #151515;
+    font-family: 'Saira Semi Condensed';
+    color:theme-color-level(dark, -11);
+ 
+}
+
+.nav-link{
+    color: theme-color(primary) !important;
+    font-size: 20px;
+}
+
+.image-height {
+    max-height: 50vh;
+    margin: auto;
+}
+
+
+
