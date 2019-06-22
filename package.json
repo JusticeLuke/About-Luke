@@ -11,8 +11,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "node_modules/jquery/dist/jquery.min.js",
-   "node_modules/bootstrap/dist/js/bootstrap.min.js"
+    "./node_modules/jquery/dist/jquery.min.js",
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js"
   },
   "repository": {
     "type": "git",
