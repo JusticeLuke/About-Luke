@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.min.js"
   },
   "repository": {
     "type": "git",
