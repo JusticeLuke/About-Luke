@@ -22,8 +22,8 @@ $dark: #372a8c;
 @import "node_modules/bootstrap/scss/button-group";
 @import "node_modules/bootstrap/scss/list-group";
 @import "node_modules/bootstrap/scss/tables";
-@import url('http://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
-@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 @function theme-color($key: "dark") {
     @return map-get($theme-colors, $key);

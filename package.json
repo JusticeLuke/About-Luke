@@ -10,7 +10,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bootstrap": "node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "popper.js": "node_modules/popper.js/dist/popper.min.js",
+    "jquery": "node_modules/jquery/dist/jquery.min.js"
   },
   "repository": {
     "type": "git",
