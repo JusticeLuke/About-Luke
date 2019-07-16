@@ -50,13 +50,23 @@ body {
 }
 
 .image-height {
-    max-height: 55vh;
+    max-height: 67vh;
+    min-width: 100vw;
     margin: auto;
 }
 
 table {
     font-size: 24px;
 }
+table tr td {
+     padding-bottom: 10px;
+ }
+
+ main .container .row,
+ main .container .row .col {
+     padding: 3px 3px 3px 3px;
+ }
+
 
 
 
