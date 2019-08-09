@@ -10192,7 +10192,12 @@ table {
 table tr td {
   padding-bottom: 2.5em; }
 
-/* clearfix */
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
 .grid:after {
   content: '';
   display: block;
@@ -10200,26 +10205,21 @@ table tr td {
 
 .grid-sizer,
 .grid-item {
-  width: 25%;
-  padding: .5em .5em; }
+  width: 33.333%; }
 
+@media (max-width: 575px) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%; } }
+@media (min-width: 576px) and (max-width: 767px) {
+  .grid-sizer,
+  .grid-item {
+    width: 50%; } }
 .grid-item {
-  height: 300px;
   float: left; }
 
-.grid-item--width2 {
-  width: 50%; }
-
-.grid-item--width3 {
-  width: 75%; }
-
-.grid-item--height2 {
-  height: 300px; }
-
-.grid-item--height3 {
-  height: 400px; }
-
-.grid-item--height4 {
-  height: 500px; }
+.grid-item img {
+  display: block;
+  max-width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
