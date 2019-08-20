@@ -44,6 +44,10 @@ body {
  
 }
 
+.fixed-top {
+  position: fixed !important;
+}
+
 .nav-link{
     color: theme-color(primary) !important;
     font-size: 20px;
@@ -63,7 +67,7 @@ table {
     font-size: 24px;
 }
 table tr td {
-     padding-bottom: 2.5em;
+     padding-bottom: 1em;
  }
 
  .modal-body {

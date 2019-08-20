@@ -10174,6 +10174,9 @@ body {
   font-family: 'Saira Semi Condensed';
   color: #e7e5f1; }
 
+.fixed-top {
+  position: fixed !important; }
+
 .nav-link {
   color: #ffea74 !important;
   font-size: 20px; }
@@ -10190,7 +10193,7 @@ table {
   font-size: 24px; }
 
 table tr td {
-  padding-bottom: 2.5em; }
+  padding-bottom: 1em; }
 
 .modal-body {
   overflow: auto; }
