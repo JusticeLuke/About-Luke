@@ -57,43 +57,63 @@
       <p class="text-center display-1 my-5 font-weight-bold header-style">ART</p>
     </div>
 
-    <main role="main" class="container">
+  <main role="main" class="container">
     <div class="grid">
         <div class="grid-sizer">
         </div>
         <div class="grid-item">
-            <img src="../Images/women.png" alt="...">
+            <a onclick="getName('The Matriarch')" data-toggle="modal" data-target="#imageModal"><img src="../Images/women.png" id="The Matriarch" alt="The Matriarch"></a>
         </div>
         <div class="grid-item">
-          <img src="../Images/poster.jpg" alt="...">
+          <a onclick="getName('Debs Boys')" data-toggle="modal" data-target="#imageModal"><img src="../Images/poster.jpg" id="Debs Boys" alt="Debs Boys"></a>
         </div>
         <div class="grid-item">
-          <img src="../Images/Alchemist.png" alt="...">
-        </div>
-        <div class=" grid-item">
-            <img src="../Images/Self.jpg" alt="...">
-        </div>       
-        <div class=" grid-item">
-            <img src="../Images/Dancer.jpg" alt="...">
-        </div>
-        <div class=" grid-item"> 
-            <img src="../Images/Cottage.jpg" alt="...">
+          <a onclick="getName('Alchemist')" data-toggle="modal" data-target="#imageModal"><img src="../Images/Alchemist.png" id="Alchemist" alt="Alchemist"></a>
         </div>
         <div class="grid-item">
-            <img src="../Images/Pinic.jpg" alt="...">
+          <a onclick="getName('Self')" data-toggle="modal" data-target="#imageModal"><img src="../Images/Self.jpg" id="Self" alt="Self"></a>
         </div>
         <div class="grid-item">
-          <img src="../Images/LogoCrop.png" alt="...">
+          <a onclick="getName('Dancer')" data-toggle="modal" data-target="#imageModal"><img src="../Images/Dancer.jpg" id="Dancer" alt="Dancer"></a>
         </div>
         <div class="grid-item">
-          <img src="../Images/Madam Potrait.png" alt="...">
+          <a onclick="getName('Summer Cottage')" data-toggle="modal" data-target="#imageModal"><img src="../Images/Cottage.jpg" id="Summer Cottage" alt="Summer Cottage"></a>
         </div>
         <div class="grid-item">
-          <img src="../Images/Dog.jpg" alt="Dog Drawing">
+          <a onclick="getName('Picnic')" data-toggle="modal" data-target="#imageModal"><img src="../Images/Pinic.jpg" id="Picnic" alt="Pinic"></a>
         </div>
-    
+        <div class="grid-item">
+          <a onclick="getName('Pixel City')" data-toggle="modal" data-target="#imageModal"><img src="../Images/LogoCrop.png" id="Pixel City" alt="Pixel City"></a>
+        </div>
+        <div class="grid-item">
+          <a onclick="getName('Madam')" data-toggle="modal" data-target="#imageModal"><img src="../Images/Madam Potrait.png" id="Madam" alt="Madam"></a>
+        </div>
+        <div class="grid-item">
+          <a onclick="getName('French')" data-toggle="modal" data-target="#imageModal"><img src="../Images/Dog.jpg" id="French" alt="French Dog"></a>
+        </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog mw-100 w-75" role="document">
+    <div class="modal-content" id="get_art_container">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button onclick="emptyModal() "type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-</main>
+      <div class="modal-body text-center" id="imageBody">
+        
+                  
+      </div>
+      <div class="modal-footer">
+        <button onclick="emptyModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <!-- Core JavaScript-->
@@ -104,8 +124,11 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/OtherScripts/masonry.pkgd.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
     <!--Personal Scripts-->
     <script src="../node_modules/OtherScripts/masonry.js"></script>
+    <script src="../node_modules/OtherScripts/get_art.js"></script>
     </body>
 </html>

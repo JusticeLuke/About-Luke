@@ -66,6 +66,18 @@ table tr td {
      padding-bottom: 2.5em;
  }
 
+ .modal-body {
+   overflow: auto;
+ }
+
+ .modal-content {
+   background-color: theme-color(dark) !important;
+ }
+
+ .modal-title {
+   color: theme-color(primary) !important;
+ }
+
 /* clear fix */
 .grid:after {
     content: '';

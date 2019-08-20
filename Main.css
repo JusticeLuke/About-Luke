@@ -10192,6 +10192,15 @@ table {
 table tr td {
   padding-bottom: 2.5em; }
 
+.modal-body {
+  overflow: auto; }
+
+.modal-content {
+  background-color: #372a8c !important; }
+
+.modal-title {
+  color: #ffea74 !important; }
+
 /* clear fix */
 .grid:after {
   content: '';
