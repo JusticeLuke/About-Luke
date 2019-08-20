@@ -95,7 +95,7 @@
   </main>
 
   <!-- Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog mw-100 w-75" role="document">
     <div class="modal-content" id="get_art_container">
       <div class="modal-header">
@@ -104,9 +104,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center" id="imageBody">
-        
-                  
+      <div class="modal-body text-center" id="imageBody" >
+           <img class="modalArt">
       </div>
       <div class="modal-footer">
         <button onclick="emptyModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -128,6 +127,15 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
     <!--Personal Scripts-->
+    <script>
+      $(document).ready(function() {
+        $("#imageModal").on('hide.bs.modal', function(){
+          alert('The modal is now hidden.');
+        }); 
+    
+        
+      });
+    </script>   
     <script src="../node_modules/OtherScripts/masonry.js"></script>
     <script src="../node_modules/OtherScripts/get_art.js"></script>
     </body>
