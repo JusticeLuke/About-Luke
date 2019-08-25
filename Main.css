@@ -10355,6 +10355,11 @@ table tr td {
 .modalArt {
   max-height: 90vh; }
 
+.close {
+  color: white !important;
+  font-size: 2.5rem !important;
+  text-shadow: none !important; }
+
 /* clear fix */
 .grid:after {
   content: '';
