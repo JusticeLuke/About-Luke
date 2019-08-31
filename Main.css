@@ -10324,6 +10324,12 @@ body {
   font-family: 'Saira Semi Condensed';
   color: #e7e5f1; }
 
+.projectBody {
+  padding-top: 4.3vh; }
+
+@media (min-width: 768px) and (max-width: 962px) {
+  .projectBody {
+    padding-top: 5vh; } }
 .fixed-top {
   position: fixed !important; }
 
@@ -10389,5 +10395,32 @@ table tr td {
 .grid-item img {
   display: block;
   max-width: 100%; }
+
+.projectLink {
+  color: white;
+  font-size: 2em;
+  background: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  padding: 0 .5em 0 .5em;
+  margin-left: 1em;
+  bottom: 0; }
+
+.projectTitle {
+  color: white;
+  font-size: 2em;
+  background: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  left: 50%;
+  margin-left: -213px;
+  padding: 0 .5em 0 .5em;
+  top: 0; }
+
+@media (max-width: 575px) {
+  .projectLink,
+  .projectTitle {
+    font-size: 1.25em; }
+
+  .projectTitle {
+    margin-left: -135.5px; } }
 
 /*# sourceMappingURL=main.css.map */
