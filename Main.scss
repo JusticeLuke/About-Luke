@@ -42,6 +42,7 @@ body {
     background-color: #151515;
     font-family: 'Saira Semi Condensed';
     color:theme-color-level(dark, -11);
+    margin-bottom: 3%;
     
  
 }
@@ -99,6 +100,17 @@ table tr td {
    color: white !important;
    font-size: 2.5rem !important;
    text-shadow: none !important;
+ }
+
+ /* Project Table Style */
+
+ .addInfo {
+   color: rgb(200, 200, 200);
+   cursor: pointer;
+ }
+
+ .addInfo:hover {
+    color: white;
  }
 
 /* clear fix */

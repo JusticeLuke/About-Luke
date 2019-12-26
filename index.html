@@ -94,23 +94,23 @@
     </div>
 
     <main role="main" class="container mt-5">
-      <div class="row">
-      <div class="col">
-        <h1 class="display-2 text-center">About Lucas</h1>
-        <p class="lead">Hi, I'm Lucas. I love creating art and exploring technology, and this site is a way to bring those two things together! 
-          I currently work as a manager for the UGA field crew, but in my free time I love to draw. I've displayed some of 
-          my art under Projects/Art page! I am studying computer science, and have a few coding projects I'm proud of. They're on the projects page.
-          This site is still very much under construction, but look around, enjoy, and feel free to contact me!</p>
-      </div>
+      <div class="row"><!--row 1-->
+        <div class="col">
+          <h1 class="display-2 text-center">About Lucas</h1>
+          <p class="lead">Hi, I'm Lucas. I love creating art and exploring technology, and this site is a way to bring those two things together! 
+            I currently work as a manager for the UGA field crew, but in my free time I love to draw. I've displayed some of 
+            my art under Projects/Art page! I am studying computer science, and have a few coding projects I'm proud of. They're on the projects page.
+            This site is still very much under construction, but look around, enjoy, and feel free to contact me!</p>
+        </div>
 
-      <div class="col d-none d-md-block">
-        <div class="text-center">
-          <img src="Images/ljlogo.png" class="">
+        <div class="col d-none d-md-block">
+          <div class="text-center">
+            <img src="Images/ljlogo.png" class="">
+          </div>
         </div>
       </div>
-      </div>
       
-      <div class="row">
+      <div class="row"><!--row 2-->
         <div class="col d-none d-md-block">
         </div>
         <div class="col">
@@ -121,15 +121,46 @@
               <td>jjusticeluke@gmail.com</td>
             </tr>
             <tr>
+              <td><b>GITHUB</b>: </td>  
+              <td><a href="ttps://github.com/JusticeLuke">JusticeLuke</a></td>
+            </tr>
+            <tr>
               <td><b>DEVIANT ART</b>: </td>
               <td><a href="https://www.deviantart.com/badattherapy">BadAtTherapy</a></td>
+            </tr>
             <tr>
               <td><b>LINKEDIN</b>: </td>
               <td><a href="https://www.linkedin.com/in/lucas-justice-1990s">lucas-justice-1990s</a></td>
             </tr>
+          </table>
         </div>
       </div>
-    </main><!-- /.container -->
+      
+      <div class="row  mw-100 text-center">
+        <h1 class="display-2 mx-auto">Projects</h1>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <tr>
+            <td><a  href="Projects/Art.html"><b>ART GRID DISPLAY</b></a></td>
+            <td><div style="width:50%;height: 2px;background: white;"></div></td>
+            <td><p id="gridIntro" class="addInfo">View my favorite art pieces I created in a reactive grid display.</p></td> 
+            <td><p id="infoGrid" style="display: none;">Using technolgy I created a display. This display makes my art look pretty. Its mobile friendly.</p></td>         
+          </tr>          
+        </div>
+        <div class="col">
+          <td><a href="Projects/PaintingWithin.html"><b>DISSECTION OF THE TRIBUNA OF THE UFFIZI</b></a></td>   
+          <td><div style="width:50%;height: 2px;background: white;"></div></td>       
+          <td><p id="paintingIntro" class="addInfo">Explore all the famous art, and people fantastically packed into one masterworked art piece.</p></td> 
+          <td><p id="infoPainting" style="display: none;">The Tribuna of the Uffizi has over 100 historically signficant figures and pieces depicted within it.
+              Navigating all this infomation can be overwhelming, so I've tried to simplify the process. Each significant object has been overlayed
+              with a svg hotspot. So as you glance through the many people, paintings, and sculptures, select it to learn more about the person or piece.
+              The Tribuna of Uffizi is a massive artwork, zoom in to get a closer look at an piece you like or to select one the smaller pieces.</p></td> 
+        </div>
+      </div>
+
+    </main>
 
     <!-- Core JavaScript-->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -139,5 +170,22 @@
   <script src="node_modules/OtherScripts/masonry.pkgd.js"></script>
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
   
-
-</body></html>
+  <script>
+    $('#gridIntro').on({
+      click: function(e) {
+        e.preventDefault();
+        $("#infoGrid").toggle();
+        $(this).css('color', 'white');
+      }
+    });  
+    
+    $('#paintingIntro').on({
+      click: function(e) {
+        e.preventDefault();
+        $("#infoPainting").toggle();
+        $(this).css('color', 'white');
+      }
+    });  
+  </script>
+  </body>
+</html>
