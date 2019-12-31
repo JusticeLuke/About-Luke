@@ -1,0 +1,185 @@
+//Overriding Styles
+$primary: #ffea74;
+$dark: #372a8c;
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/code";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/dropdown";
+@import "../../node_modules/bootstrap/scss/modal";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/button-group";
+@import "../../node_modules/bootstrap/scss/list-group";
+@import "../../node_modules/bootstrap/scss/tables";
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@function theme-color($key: "dark") {
+    @return map-get($theme-colors, $key);
+}
+
+@function theme-color-level($color-name: "dark", $level: 0) {
+    $color: theme-color($color-name);
+    $color-base: if($level > 0, #000, #fff);
+    $level: abs($level);
+
+    @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
+body {
+    background-color: #151515;
+    font-family: 'Saira Semi Condensed';
+    color:theme-color-level(dark, -11);
+    margin-bottom: 3%;
+    
+ 
+}
+
+.projectBody{
+  padding-top: 4.3vh;
+}
+
+@media(min-width:768px) and (max-width:962px){
+  .projectBody{
+    padding-top:5vh;
+  }
+}
+
+.fixed-top {
+  position: fixed !important;
+}
+
+.nav-link{
+    color: theme-color(primary) !important;
+    font-size: 20px;
+}
+
+.header-style{
+    color: theme-color(primary) !important;
+}
+
+ .modal-content {
+  background-color: rgba(0,0,0,0);
+  border: 0px !important;
+ }
+
+ .modal-title {
+   color: theme-color(primary);
+ }
+
+ @media (min-width: 576px) {
+    .modal-dialog {
+        width: 80%;
+        max-width: fit-content;
+        margin-top: 1.75rem;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        margin-left: auto;
+    }
+}
+
+ .modalArt {
+   max-height: 90vh;
+ }
+
+ .close {
+   color: white !important;
+   font-size: 2.5rem !important;
+   text-shadow: none !important;
+ }
+
+ /* Project Table Style */
+
+ .addInfo {
+   color: rgb(200, 200, 200);
+   cursor: pointer;
+ }
+
+ .addInfo:hover {
+    color: white;
+ }
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  .grid-sizer,
+  .grid-item {
+    width: 33.333%;
+  }
+  @media (max-width: 575px) {
+    .grid-sizer,
+    .grid-item {
+      width: 50%;
+    }
+  }
+  @media (min-width: 576px) and (max-width: 767px) {
+    .grid-sizer,
+    .grid-item {
+      width: 50%;
+    }
+  }
+
+  .grid-item {
+    cursor: pointer;
+    float: left;
+  }
+  
+  .grid-item img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .projectLink {
+    color: white;
+    font-size: 2em;
+    background: rgba(0,0,0,.85);
+    position: absolute;
+    padding: 0 .5em 0 .5em;
+    margin-left: 1em;
+    bottom: 0;
+
+  }
+
+  .projectTitle {
+    color: white;
+    font-size: 2em;
+    background: rgba(0,0,0,.85);
+    position: absolute;
+    left: 50%;
+    margin-left: -213px;
+    padding: 0 .5em 0 .5em;
+    top: 0;
+  }
+
+  @media (max-width: 575px) {
+    .projectLink,
+    .projectTitle {
+      font-size: 1.25em;
+    }
+
+    .projectTitle {
+      margin-left: -135.5px;
+    }
+  }
