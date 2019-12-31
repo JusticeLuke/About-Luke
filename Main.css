@@ -13173,11 +13173,11 @@ body {
   margin: auto;
 }
 
-table {
+.contact {
   font-size: 24px;
 }
 
-table tr td {
+.contact tr td {
   padding-bottom: 1em;
 }
 
