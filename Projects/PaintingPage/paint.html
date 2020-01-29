@@ -15,7 +15,11 @@
       <div class="text-intro-content block">
         <h1>Tribuna Of The Uffizi</h1>
         <div class="line-center block" style="background: white; width: 80%; height: 2px; margin: auto"></div>
-          <p class="info-header">Discover the history of a 105 paintings, scupltures, and people all depicted in a single masterpiece.</p>
+          <p class="info-header">Discover the history of a 105 paintings, scupltures, and people all depicted in a single masterpiece.
+            <br> -Click and drag to move the painting.
+            <br> -Use the mouse wheel / pinch gesture / + / -  to zoom in and out.
+            <br> -Use the buttons in the top right corner to reset viewing window
+          </p>
           <br>
           <p class= "info text-left"><b>Tribuna Of The Uffizi</b> is littered with copies of masterclass paintings, and sculptures. 
             Prominent artists, diplomats, and connoisseurs fill the room in a vain display. The shear amount of works 
@@ -41,9 +45,13 @@
           informative about this block of text. It is only for decoration. Jesus Hot Christ can rupture my prostate.
         </p>
     </div>-->
+
+    <div class="zoomControl m-1 p-1">
+      <button id="zoomIn" class="btn btn-primary">+</button>
+      <button id="zoomOut" class="btn btn-primary">-</button>
+      <button id="reset" class="btn btn-primary">&#8635</button>
+    </div>
     <div class="vw-100 vh-100 overflow-hidden">
-        
-      <!--<img class="painting" src="Assets/Images/uffizi.jpg">  -->
         <svg  id="zoomElement" class="hotspot" width="5804" height="4607" version="1.1" viewBox="0 0 5804 4607" xmlns="http://www.w3.org/2000/svg">
             <g   fill="#d3d3d3" fill-opacity=".2">
               <path  data-name="Tribuna of the Uffizi" d="m0.5 0.5h5803v4606h-5803z" stroke="#000" stroke-width="1px" fill-opacity="0"/>             
@@ -58,7 +66,7 @@
               <path d="m1321.5 1463.2 232.81 47.076-3.4237 295.29-229.39-29.101z"/>
           </g>
         </svg>   
-        
+      --> 
      </div>
     
     <!--JavaScript -->    
@@ -71,25 +79,35 @@
 
 
     <script>
-      
-      const elem = document.getElementById('zoomElement');
-      const panzoom = Panzoom(elem, {
-        maxScale: 3,
-        minScale: .3
-      });
-      panzoom.pan(10, 10);
-      setTimeout(() => panzoom.pan(100, 100));
-      
-      elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel, panzoom.disablePan);
-      $( "#zoomElement" ).dblclick(function() {
-        panzoom.zoomIn();
-      });
-      $( "#zoomElement" ).dblclick(function() {
+      const panzoom = Panzoom(document.getElementById('zoomElement'),
+      {
         
-      });
-      Panzoom(elem, { contain: 'outside', startX: -700, startY: -700 })
+        maxScale: 2.5,
+        contain: 'outside',
+        startScale: .3
+      }
+    )
 
+    document.getElementById('zoomElement').addEventListener('wheel', e => {
+      panzoom.zoomWithWheel(e)
+    })
 
+    const mockWheelEvent = (delta) => ({
+      // Mock this function so it can be called
+      preventDefault: () => {},
+      deltaY: delta,
+      deltaX: 0,
+      // The following point is definitely above the image
+      clientX: 400,
+      clientY: 20
+    })
+
+    const sleep = (duration) => new Promise(resolve => setTimeout(resolve, duration))
+
+    document.getElementById('reset').addEventListener('click', () => {
+      panzoom.zoom(.1)
+    })
+    
     </script>
     <script>
       $(document).ready(function(){

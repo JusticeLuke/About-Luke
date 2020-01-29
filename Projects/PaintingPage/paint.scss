@@ -39,6 +39,11 @@
   
 }
  
+.zoomControl {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 990;
+}
 //Intro Container Content
 .intro-content {
   color: white;
@@ -68,7 +73,7 @@ h1 {
 	        animation: scale-up-hor-center 2s 2.25s both;
 }
 
-.info-header, button {
+.info-header button {
   -webkit-animation: text-focus-in 1s 2.25s both;
 	        animation: text-focus-in 1s 2.25s both;
 }
