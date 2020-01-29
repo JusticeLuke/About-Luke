@@ -32,7 +32,7 @@
           <button type="button" class="btn btn-secondary">Learn More</button>       
       </div>      
     </section>
-
+<!---
     <div class="artInfo w-25 h-100 position-fixed ml-1">
         <h1>Sample Text</h1>
         <div style="background-color: azure; height: 25%; width: 25%;"></div>
@@ -40,11 +40,11 @@
           I need to acount for text overflow only a lot of words will help me guess. Stop reading this there is nothing
           informative about this block of text. It is only for decoration. Jesus Hot Christ can rupture my prostate.
         </p>
-    </div>
-    <div class="zoom mw-100 mh-100 ">
+    </div>-->
+    <div class="vw-100 vh-100 overflow-hidden">
         
       <!--<img class="painting" src="Assets/Images/uffizi.jpg">  -->
-        <svg  class="hotspot" width="5804" height="4607" version="1.1" viewBox="0 0 5804 4607" xmlns="http://www.w3.org/2000/svg">
+        <svg  id="zoomElement" class="hotspot" width="5804" height="4607" version="1.1" viewBox="0 0 5804 4607" xmlns="http://www.w3.org/2000/svg">
             <g   fill="#d3d3d3" fill-opacity=".2">
               <path  data-name="Tribuna of the Uffizi" d="m0.5 0.5h5803v4606h-5803z" stroke="#000" stroke-width="1px" fill-opacity="0"/>             
               <path data-name="Charity" data-author="Guido Reni" data-medium="painting" d="m1610.1 586.23 525.22 4.8408 2.4204 670.45-539.75-2.4204z"/>         
@@ -62,7 +62,7 @@
      </div>
     
     <!--JavaScript -->    
-    <script src="../../node_modules/panzoom/dist/panzoom.min.js"></script>
+    <script src="../../node_modules/@panzoom/panzoom/dist/panzoom.min.js"></script>
 
     <!-- Core JS -->    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -72,13 +72,23 @@
 
     <script>
       
-      var area = document.querySelector('.zoom');
-      panzoom(area, {
-        maxZoom: 2,
-        minZoom: .2,
-        bounds: true,
-        boundsPadding: 0.1
-      }).zoomAbs(-750, -750, .7);
+      const elem = document.getElementById('zoomElement');
+      const panzoom = Panzoom(elem, {
+        maxScale: 3,
+        minScale: .3
+      });
+      panzoom.pan(10, 10);
+      setTimeout(() => panzoom.pan(100, 100));
+      
+      elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel, panzoom.disablePan);
+      $( "#zoomElement" ).dblclick(function() {
+        panzoom.zoomIn();
+      });
+      $( "#zoomElement" ).dblclick(function() {
+        
+      });
+      Panzoom(elem, { contain: 'outside', startX: -700, startY: -700 })
+
 
     </script>
     <script>
