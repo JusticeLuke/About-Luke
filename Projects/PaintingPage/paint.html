@@ -11,14 +11,16 @@
     <title>Tribuna Of The Uffizi</title>
   </head>
   <body class="bg-dark">  
+    <div class="vw-100 vh-100 position-fixed intro-Cover"></div><!--Covers painting to prevent panning or zooming-->
     <section class="intro-content text-center">
       <div class="text-intro-content block">
         <h1>Tribuna Of The Uffizi</h1>
         <div class="line-center block" style="background: white; width: 80%; height: 2px; margin: auto"></div>
           <p class="info-header">Discover the history of a 105 paintings, scupltures, and people all depicted in a single masterpiece.
+            <br>
             <br> -Click and drag to move the painting.
             <br> -Use the mouse wheel / pinch gesture / + / -  to zoom in and out.
-            <br> -Use the buttons in the top right corner to reset viewing window
+            <br> -Use the buttons in the top right corner to reset viewing window.
           </p>
           <br>
           <p class= "info text-left"><b>Tribuna Of The Uffizi</b> is littered with copies of masterclass paintings, and sculptures. 
@@ -36,7 +38,7 @@
           <button type="button" class="btn btn-secondary">Learn More</button>       
       </div>      
     </section>
-<!---
+    <!---
     <div class="artInfo w-25 h-100 position-fixed ml-1">
         <h1>Sample Text</h1>
         <div style="background-color: azure; height: 25%; width: 25%;"></div>
@@ -47,16 +49,14 @@
     </div>-->
 
     <div class="zoomControl m-1 p-1">
-      <button id="zoomIn" class="btn btn-primary">+</button>
-      <button id="zoomOut" class="btn btn-primary">-</button>
       <button id="reset" class="btn btn-primary">&#8635</button>
     </div>
-    <div class="vw-100 vh-100 overflow-hidden">
+    <div id="zoomContainer" class="vw-100 vh-100 overflow-hidden">
         <svg  id="zoomElement" class="hotspot" width="5804" height="4607" version="1.1" viewBox="0 0 5804 4607" xmlns="http://www.w3.org/2000/svg">
             <g   fill="#d3d3d3" fill-opacity=".2">
-              <path  data-name="Tribuna of the Uffizi" d="m0.5 0.5h5803v4606h-5803z" stroke="#000" stroke-width="1px" fill-opacity="0"/>             
+              <path data-name="Tribuna of the Uffizi" d="m0.5 0.5h5803v4606h-5803z" stroke="#000" stroke-width="1px" fill-opacity="0"/>             
               <path data-name="Charity" data-author="Guido Reni" data-medium="painting" d="m1610.1 586.23 525.22 4.8408 2.4204 670.45-539.75-2.4204z"/>         
-              <path  d="m997.2 332.59-19.363 813.25 585.73 145.22 7.2612-723.7z"/>
+              <path d="m997.2 332.59-19.363 813.25 585.73 145.22 7.2612-723.7z"/>
               <path d="m2187.7 651.78 922.68 14.551 3.4237 1056.2-932.1 3.4236z"/>
               <path d="m3137 592.72 539.23 4.2796 0.856 689.87-556.35-5.1355z"/>
  
@@ -66,7 +66,6 @@
               <path d="m1321.5 1463.2 232.81 47.076-3.4237 295.29-229.39-29.101z"/>
           </g>
         </svg>   
-      --> 
      </div>
     
     <!--JavaScript -->    
@@ -77,14 +76,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
 
-
+    <!--Controls zooming and panning. Along with +, -, and reset buttons-->
+    <!--Painting native width: 5803, height: 4606-->
     <script>
       const panzoom = Panzoom(document.getElementById('zoomElement'),
-      {
-        
-        maxScale: 2.5,
+      {        
+        startX: -($('#zoomElement').width())/2,
+        startY: -($('#zoomElement').height())/2,
+        startScale: .75,
+        maxScale: 2,
         contain: 'outside',
-        startScale: .3
+        step: .075
       }
     )
 
@@ -92,48 +94,22 @@
       panzoom.zoomWithWheel(e)
     })
 
-    const mockWheelEvent = (delta) => ({
-      // Mock this function so it can be called
-      preventDefault: () => {},
-      deltaY: delta,
-      deltaX: 0,
-      // The following point is definitely above the image
-      clientX: 400,
-      clientY: 20
-    })
-
-    const sleep = (duration) => new Promise(resolve => setTimeout(resolve, duration))
-
-    document.getElementById('reset').addEventListener('click', () => {
-      panzoom.zoom(.1)
-    })
+    document.getElementById('reset').addEventListener('click', () => panzoom.zoom($("#zoomContainer").width()/5803,))
     
     </script>
+
+    <!--Intro Buttons-->
     <script>
       $(document).ready(function(){
         $(".btn-primary").click(function(){
           $("section").hide();
-        });  
-      });
-    </script>
+          $(".intro-Cover").hide();
+        })
 
-    <script>
-      $(document).ready(function(){
         $(".btn-secondary").click(function(){
           $(".info").show();
-        });  
-      });
-    </script>
-    <script>
-    
-    $(document).ready(
-      function(){
-        $("").click(function(){
-          $("").toggle();
         })
-      }
-    )
-    
+      });  
     </script>
   </body>
 </html>

@@ -41,26 +41,29 @@
  
 .zoomControl {
   position: fixed;
-  background-color: rgba(0, 0, 0, .3);
   z-index: 990;
 }
+
 //Intro Container Content
 .intro-content {
   color: white;
   position:absolute;
   left:15%; right:15%;
   top:30%; bottom:0;
-  margin:auto;
+  margin: auto;
   z-index: 999;
+}
+//Covers the painting container to prevent pan or use of the buttons
+.intro-Cover {
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 998;
 }
 
 .text-intro-content {
   background-color: rgba(0, 0, 0, .3);
   padding: 0% 1% 1% 1%;
   -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
- 
-  
+	        animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;  
 }
 
 h1 {

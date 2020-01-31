@@ -13153,7 +13153,6 @@ input[type=button].btn-block {
 
 .zoomControl {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
   z-index: 990;
 }
 
@@ -13166,6 +13165,11 @@ input[type=button].btn-block {
   bottom: 0;
   margin: auto;
   z-index: 999;
+}
+
+.intro-Cover {
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 998;
 }
 
 .text-intro-content {
