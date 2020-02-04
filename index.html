@@ -38,9 +38,11 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline mw-25">
+          <div class="Justiceluke.test">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </div>
         </form>
       </div>
     </nav>
@@ -55,7 +57,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="Projects/Art.html"><img src="Images/banner2.jpg" class="d-block mw-100 banner-height" alt="..."></a>
+            <a href="Projects/ArtPage/art.html"><img src="Images/banner2.jpg" class="d-block mw-100 banner-height" alt="..."></a>
             <div class="carousel-caption d-none d-md-block">
               <h3 class="font-weight-bold text-uppercase">CHECK OUT MY ART</h5>
               <p>This is my most recent project using grids and jquery to display my porfolio in a sleek tile design.</p>
@@ -134,22 +136,25 @@
         <h1 class="display-2 mx-auto">Projects</h1>
       </div>
 
-      <div class="row contact ">
-        <div class="artGridInfo col mr-5">
+      <div class="row contact">
+        <div class="col artPageCol">
             <a  href="Projects/ArtPage/art.html"><b>ART GRID DISPLAY</b></a>
-            <div style="width:100%;height: 2px;background: white;"></div>
+            <div style="width:50%;height: 2px;background: white;"></div>
             <img class="mw-100 pt-1"src="Images/artgridsample.PNG">
-            <p id="gridIntro" class="addInfo">View my favorite art pieces I created in a reactive grid display.</p> 
-            <p id="infoGrid" style="display: none;">Using technolgy I created a display. This display makes my art look pretty. Its mobile friendly.</p>            
+            <p>A collection of drawings, paintings, and digital art I've created over the years in a reactive display.</p> 
+            <p id="infoGrid" style="display: none;">View my ever expanding portfolio all gathered in one space. Optimized for a
+            variety of devices using a collaboration of <a href="https://bootstrap.com">bootstrap</a> and <a href="https://masonry.desandro.com/layout.html">masonry.</a> </p>  
+            <p id="gridIntro" class="addInfo">learn more...</p>          
         </div>
-        <div class="col artGridInfo">
+        <div class="col paintPageCol ml-5">
           <a href="Projects/PaintingPage/paint.html"><b>DISSECTION OF THE TRIBUNA OF THE UFFIZI</b></a> 
-          <div style="width:100%;height: 2px;background: white;"></div>       
-          <p id="paintingIntro" class="addInfo">Explore all the famous art, and people fantastically packed into one masterworked art piece.</p> 
+          <div style="width:50%;height: 2px;background: white;"></div>       
+          <p >Explore all the famous art, and people fantastically packed into one masterworked art piece.</p> 
           <p id="infoPainting" style="display: none;">The Tribuna of the Uffizi has over 100 historically signficant figures and pieces depicted within it.
               Navigating all this infomation can be overwhelming, so I've tried to simplify the process. Each significant object has been overlayed
               with a svg hotspot. So as you glance through the many people, paintings, and sculptures, select it to learn more about the person or piece.
-              The Tribuna of Uffizi is a massive artwork, zoom in to get a closer look at an piece you like or to select one the smaller pieces.</p>
+              The Tribuna of Uffizi is a massive artwork, zoom in to get a closer look at an piece you like or to select one the smaller pieces. </p>
+              <p id="paintingIntro" class="addInfo">learn more...</p>
         </div>
       </div>
 
@@ -159,13 +164,18 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script async src="https://cse.google.com/cse.js?cx=001947135288453699004:mpcsnkcyaop"></script>
+
     
   <script>
+    
     $('#gridIntro').on({
       click: function(e) {
         e.preventDefault();
         $("#infoGrid").toggle();
-        $(this).css('color', 'white');
+        $("#gridIntro").fadeOut(function () {
+            $("#gridIntro").text(($("#gridIntro").text() == 'learn more...') ? 'collaspe' : 'learn more...').fadeIn();
+        })
       }
     });  
     
@@ -173,7 +183,9 @@
       click: function(e) {
         e.preventDefault();
         $("#infoPainting").toggle();
-        $(this).css('color', 'white');
+        $("#paintingIntro").fadeOut(function () {
+            $("#paintingIntro").text(($("#paintingIntro").text() == 'learn more...') ? 'collaspe' : 'learn more...').fadeIn();
+        })
       }
     });  
   </script>

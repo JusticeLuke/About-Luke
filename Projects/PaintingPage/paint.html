@@ -11,11 +11,17 @@
     <title>Tribuna Of The Uffizi</title>
   </head>
   <body class="bg-dark">  
+    <div class="vw-100 vh-100 position-fixed intro-Cover"></div><!--Covers painting to prevent panning or zooming-->
     <section class="intro-content text-center">
       <div class="text-intro-content block">
-        <h1>Tribuna Of The Uffizi</h1>
+        <h1 class="intro-Content-Header">Tribuna Of The Uffizi</h1>
         <div class="line-center block" style="background: white; width: 80%; height: 2px; margin: auto"></div>
-          <p class="info-header">Discover the history of a 105 paintings, scupltures, and people all depicted in a single masterpiece.</p>
+          <p class="info-header">Discover the history of a 105 paintings, scupltures, and people all depicted in a single masterpiece.
+            <br>
+            <br> -Click and drag to move the painting.
+            <br> -Use the mouse wheel / pinch gesture / + / -  to zoom in and out.
+            <br> -Use the buttons in the top right corner to reset viewing window.
+          </p>
           <br>
           <p class= "info text-left"><b>Tribuna Of The Uffizi</b> is littered with copies of masterclass paintings, and sculptures. 
             Prominent artists, diplomats, and connoisseurs fill the room in a vain display. The shear amount of works 
@@ -32,65 +38,134 @@
           <button type="button" class="btn btn-secondary">Learn More</button>       
       </div>      
     </section>
-
     
-    <div class="zoom mw-100 mh-100 ">
-        
-      <!--<img class="painting" src="Assets/Images/uffizi.jpg">  -->
-        <svg  class="hotspot" width="5804" height="4607" version="1.1" viewBox="0 0 5804 4607" xmlns="http://www.w3.org/2000/svg">
+    <div class="artContainer">
+      <div class="artInfo p-2">
+        <h1 id="artTitle"></h1>
+        <div class="row text-center"><p id="artAuthor" class="col"></p><p id="artMedium" class="col"></p></div>
+        <div style="background-color: azure; height: 200px; width: 200px; margin: auto"></div>
+        <button id="zoomToObject" class="btn btn-primary display-inline">zoom to object</button>
+        <p>Lorem epsum. Filler text, need about 100 words to fill up this paragraph to guess how im gonna style it. Will
+          I need to acount for text overflow only a lot of words will help me guess. Stop reading this there is nothing
+          informative about this block of text. It is only for decoration. 
+        </p> 
+      </div>     
+      <div class="hideArtInfo"><p>&#9658</p></div>  
+    </div>
+    
+
+    <div class="zoomControl m-1">
+      <button id="reset" class="btn btn-primary">&#8635</button>
+    </div>
+    <div id="zoomContainer" class="vw-100 vh-100 overflow-hidden">
+        <svg  id="zoomElement" class="hotspot" width="5804" height="4607" version="1.1" viewBox="0 0 5804 4607" xmlns="http://www.w3.org/2000/svg">
             <g   fill="#d3d3d3" fill-opacity=".2">
-              <path  data-name="Tribuna of the Uffizi" d="m0.5 0.5h5803v4606h-5803z" stroke="#000" stroke-width="1px" fill-opacity="0"/>             
-              <path data-name="Charity" data-author="Guido Reni" data-medium="painting" d="m1610.1 586.23 525.22 4.8408 2.4204 670.45-539.75-2.4204z"/>         
-              <path  d="m997.2 332.59-19.363 813.25 585.73 145.22 7.2612-723.7z"/>
-              <path d="m2187.7 651.78 922.68 14.551 3.4237 1056.2-932.1 3.4236z"/>
- <path d="m3137 592.72 539.23 4.2796 0.856 689.87-556.35-5.1355z"/>
+              <path data-name="Tribuna of the Uffizi" d="m0.5 0.5h5803v4606h-5803z" stroke="#000" stroke-width="1px" fill-opacity="0"/>             
+              <path data-name="Madonna and Child with Saint Cathrine" data-author="Titian's Workshop" data-medium="painting" d="m1610.1 586.23 525.22 4.8408 2.4204 670.45-539.75-2.4204z"/>         
+              <path data-name="Charity" data-author="Guido Reni" data-medium="painting" d="m997.2 332.59-19.363 813.25 585.73 145.22 7.2612-723.7z"/>
+              <path data-name="St. John the Baptist in the Wilderness" data-author="Raphael Workshop Assistants" data-medium="painting" d="m2187.7 651.78 922.68 14.551 3.4237 1056.2-932.1 3.4236z"/>
+              <path data-name="Madonna" data-author="Guido Reni" data-medium="painting" d="m3137 592.72 539.23 4.2796 0.856 689.87-556.35-5.1355z"/>
  
-  <path d="m3691.6 588.44 586.31-221.68 21.398 908.99-595.72 112.13z"/>
-  <path d="m5472.5 1.2105 29.051 1074.9 297.77-53.26 4.1997-1022.3z"/>
-  <path d="m0.5 0.5h205.78l766.91 310.63-23.11 802.86-948.36-231.1z"/>
-  <path d="m1321.5 1463.2 232.81 47.076-3.4237 295.29-229.39-29.101z"/>
+              <path data-name="Cleopatra" data-author="Guido Reni" data-medium="painting" d="m3691.6 588.44 586.31-221.68 21.398 908.99-595.72 112.13z"/>
+              <path data-name="Pope Leo X with Cardinals Giulio de' Medici and Luigi de' Rossi" data-author="Raphael" data-medium="painting" d="m5472.5 1.2105 29.051 1074.9 297.77-53.26 4.1997-1022.3z"/>
+              <path data-name="Venus with a Satyr and Cupids" data-author="Annibale Carracci" data-medium="painting" d="m0.5 0.5h205.78l766.91 310.63-23.11 802.86-948.36-231.1z"/>
+              <path data-name="Portrait of Galileo Galilei" data-author="Justus Sustermans" data-medium="painting" d="m1321.5 1463.2 232.81 47.076-3.4237 295.29-229.39-29.101z"/>
           </g>
         </svg>   
-        
      </div>
     
     <!--JavaScript -->    
-    <script src="../../node_modules/panzoom/dist/panzoom.min.js"></script>
+    <script src="../../node_modules/@panzoom/panzoom/dist/panzoom.min.js"></script>
 
-    <!-- Core JS -->    
+    <!-- Core JS -->  
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
 
-
+    <!--Controls zooming and panning. Along with +, -, and reset buttons-->
+    <!--Painting native width: 5803, height: 4606-->
     <script>
-      
-      var area = document.querySelector('.zoom');
-      panzoom(area, {
-        maxZoom: 2,
-        minZoom: .2,
-        bounds: true,
-        boundsPadding: 0.1
-      }).zoomAbs(-750, -750, .7);
-
-      
-
-      
-    </script>
-    <script>
-      $(document).ready(function(){
-        $(".btn-primary").click(function(){
+      const panzoom = Panzoom(document.getElementById('zoomElement'),
+      {        
+        startX: -($('#zoomElement').width())/2,
+        startY: -($('#zoomElement').height())/2,
+        startScale: 1,
+        minScale:$(document).width()/5803,
+        maxScale: 2,
+        contain: 'outside',
+        step: .075
+      }
+    )
+    $(".btn-primary").click(function(){
           $("section").hide();
-        });  
-      });
-    </script>
+          $(".intro-Cover").hide();
+          panzoom.zoom($("#zoomContainer").width()/5803);
+    })
+    
+    $("#zoomContainer").on("mousemove", function(e) { $(this).data("initcoords", { x: e.clientX, y: e.clientY }); }); 
+       
+      $("path").click(function(event){
+        //**make function to save element of event
+        var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
+        
+        if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
+          $(".artContainer").show();        
+          $("#artTitle").text($(event.target).attr("data-name"));
+          $("#artAuthor").text($(event.target).attr("data-author"));
+          $("#artMedium").text($(event.target).attr("data-medium"));        
+        }
+        $(this).data('initcoords', {x:-1, y:-1});
+      })
+      $(".hideArtInfo").click(function(){
+        $(".artContainer").hide();
+      })
 
+    $("#zoomToObject").click(function() {
+          //function to zoom on object **incomplete**
+          
+          //function to pan to object
+          
+          //Highlight selected object
+          
+    })
+    document.getElementById('zoomElement').addEventListener('wheel', e => {
+      panzoom.zoomWithWheel(e)
+    })
+
+    document.getElementById('reset').addEventListener('click', () => panzoom.zoom($(document).width()/5803))
+    </script>
+ 
+    <!--script>
+    $(document).ready(function(){
+      //Find way to run zoomContainer click before path click
+      $("#zoomContainer").click("mousedown",function(event) { $(this).data("initcoords", { x: event.clientX, y: event.clientY }); }); 
+        
+      $("path").click(function(event){
+        
+        var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
+      
+        if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
+          $(".artContainer").show();        
+          $("#artTitle").text($(event.target).attr("data-name"));
+          $("#artAuthor").text($(event.target).attr("data-author"));
+          $("#artMedium").text($(event.target).attr("data-medium"));        
+        }
+        $(this).data('initcoords', {x:-1, y:-1});
+      })
+      $(".hideArtInfo").click(function(){
+        $(".artContainer").hide();
+      })
+    })
+    </!--script-->
+    <!--Intro Buttons-->
     <script>
-      $(document).ready(function(){
+      $(document).ready(function() {
+
         $(".btn-secondary").click(function(){
           $(".info").show();
-        });  
-      });
+        })
+      });  
     </script>
   </body>
 </html>

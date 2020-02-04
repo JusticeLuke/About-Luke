@@ -97,13 +97,12 @@ body {
  }
 
  .addInfo:hover {
-    color: white;
+   text-decoration: underline;
+   color: white;
  }
-
- .artGridInfo {
-   background-color: rgba(255, 255, 255,.1);
- }
-
+ .artPageCol, .paintPageCol{
+  background-color: rgba(255, 255, 255, 0.2);
+}
 /* clear fix */
 .grid:after {
     content: '';
