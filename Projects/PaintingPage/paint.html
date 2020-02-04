@@ -90,7 +90,7 @@
       {        
         startX: -($('#zoomElement').width())/2,
         startY: -($('#zoomElement').height())/2,
-        startScale: .75,
+        startScale: 1,
         minScale:$(document).width()/5803,
         maxScale: 2,
         contain: 'outside',
@@ -103,12 +103,12 @@
           panzoom.zoom($("#zoomContainer").width()/5803);
     })
     
-    $("#zoomContainer").on("mousedown", function(e) {  console.log("mouse down"); $(this).data("initcoords", { x: e.clientX, y: e.clientY }); }); 
+    $("#zoomContainer").on("mousemove", function(e) { $(this).data("initcoords", { x: e.clientX, y: e.clientY }); }); 
        
       $("path").click(function(event){
         //**make function to save element of event
         var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
-      
+        
         if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
           $(".artContainer").show();        
           $("#artTitle").text($(event.target).attr("data-name"));
@@ -127,7 +127,7 @@
           //function to pan to object
           
           //Highlight selected object
-          $(clickElem).toggle();
+          
     })
     document.getElementById('zoomElement').addEventListener('wheel', e => {
       panzoom.zoomWithWheel(e)
