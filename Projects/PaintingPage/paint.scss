@@ -44,6 +44,41 @@
   z-index: 990;
 }
 
+//Art Info Display
+.artContainer {
+  margin-left: 70vw;
+  color: white;
+  background-color: rgba(0, 0, 0, .3);
+  position: fixed;
+  display: none;
+  z-index: 3;
+  width: 30%;
+  height: 100%;
+}
+
+.artContainer div h1 {
+  text-align: center;
+}
+
+.artInfo {
+  width: 90%;
+  height: 100vh;
+  float: right;
+}
+
+.hideArtInfo {
+  cursor: pointer;
+  color: white;
+  height: 100vh;
+  padding: 45vh 5px 5px 5px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.hideArtInfo:hover {
+  background-color: rgba(0, 0, 0, .7);
+}
+
 //Intro Container Content
 .intro-content {
   color: white;
@@ -66,7 +101,7 @@
 	        animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;  
 }
 
-h1 {
+.text-intro-content h1 {
   -webkit-animation: text-shadow-pop-right 0.6s 2.25s both;
           animation: text-shadow-pop-right 0.6s 2.25s both;
 }
