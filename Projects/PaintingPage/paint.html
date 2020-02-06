@@ -43,19 +43,31 @@
       <div class="artInfo p-2">
         <h1 id="artTitle"></h1>
         <div class="row text-center"><p id="artAuthor" class="col"></p><p id="artMedium" class="col"></p></div>
-        <div style="background-color: azure; height: 200px; width: 200px; margin: auto"></div>
-        <button id="zoomToObject" class="btn btn-primary display-inline">zoom to object</button>
-        <p>Lorem epsum. Filler text, need about 100 words to fill up this paragraph to guess how im gonna style it. Will
-          I need to acount for text overflow only a lot of words will help me guess. Stop reading this there is nothing
-          informative about this block of text. It is only for decoration. 
-        </p> 
+        <div class="text-center">
+          <div class="artThumbnail"></div>
+          <button id="zoomToObject" class="btn btn-primary mt-1">zoom to object</button>
+        </div>
+        <div class="w-100 h-25 overflow-auto mt-1">
+          <p>Lorem epsum. Filler text, need about 100 words to fill up this paragraph to guess how im gonna style it. Will
+            I need to acount for text overflow only a lot of words will help me guess. Stop reading this there is nothing
+            informative about this block of text. It is only for decoration. Lorem epsum. Filler text, need about 100 words to fill up this paragraph to guess how im gonna style it. Will
+            I need to acount for text overflow only a lot of words will help me guess. Stop reading this there is nothing
+            informative about this block of text. It is only for decoration. Lorem epsum. Filler text, need about 100 words to fill up this paragraph to guess how im gonna style it. Will
+            I need to acount for text overflow only a lot of words will help me guess. Stop reading this there is nothing
+            informative about this block of text. It is only for decoration. Lorem epsum. Filler text, need about 100 words to fill up this paragraph to guess how im gonna style it. Will
+            I need to acount for text overflow only a lot of words will help me guess. Stop reading this there is nothing
+            informative about this block of text. It is only for decoration. 
+          </p> 
+        </div>
       </div>     
       <div class="hideArtInfo"><p>&#9658</p></div>  
     </div>
     
 
-    <div class="zoomControl m-1">
-      <button id="reset" class="btn btn-primary">&#8635</button>
+    <div class="zoomControl">
+      <button id="reset" class="btn btn-primary m-1">&#8635</button>
+      <button id="revealAll" class="btn btn-primary m-1">&#11034</button>
+      <button class="btn btn-primary m-1" onclick= "window.location.href='../../index.html'">&#8962</button>
     </div>
     <div id="zoomContainer" class="vw-100 vh-100 overflow-hidden">
         <svg  id="zoomElement" class="hotspot" width="5804" height="4607" version="1.1" viewBox="0 0 5804 4607" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +91,6 @@
 
     <!-- Core JS -->  
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>  
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
 
@@ -97,74 +108,74 @@
         step: .075
       }
     )
+    //Hide intro container and zoom out
     $(".btn-primary").click(function(){
           $("section").hide();
           $(".intro-Cover").hide();
           panzoom.zoom($("#zoomContainer").width()/5803);
     })
-    
+    //Saves position of last mouse movement. Used to compare with pointer position on click.
     $("#zoomContainer").on("mousemove", function(e) { $(this).data("initcoords", { x: e.clientX, y: e.clientY }); }); 
-       
-      $("path").click(function(event){
-        //**make function to save element of event
-        var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
-        
-        if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
-          $(".artContainer").show();        
-          $("#artTitle").text($(event.target).attr("data-name"));
-          $("#artAuthor").text($(event.target).attr("data-author"));
-          $("#artMedium").text($(event.target).attr("data-medium"));        
-        }
-        $(this).data('initcoords', {x:-1, y:-1});
-      })
-      $(".hideArtInfo").click(function(){
-        $(".artContainer").hide();
-      })
+    
+    //Compares pointer position of last mouse movement(before pointer was pressed down) to pointer position when the
+    //mouse is released. If the position has not changed then art container opens and gets info about clicked object.
+    $("path").click(function(event){
 
+      var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
+      
+      if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
+        $(".artContainer").show();        
+        $("#artTitle").text($(event.target).attr("data-name"));
+        $("#artAuthor").text($(event.target).attr("data-author"));
+        $("#artMedium").text($(event.target).attr("data-medium"));        
+      }
+      $(this).data('initcoords', {x:-1, y:-1});
+    })
+    //Hide art container
+    $(".hideArtInfo").click(function(){
+      $(".artContainer").hide();
+    })
+    //Zooms/Pans/Highlights the pre-selected object
     $("#zoomToObject").click(function() {
-          //function to zoom on object **incomplete**
-          
+          //function to zoom on object
+          panzoom.zoom(2)
           //function to pan to object
-          
+          panzoom.pan(-100,200)
           //Highlight selected object
           
     })
+    //Zoom on pointer location
     document.getElementById('zoomElement').addEventListener('wheel', e => {
       panzoom.zoomWithWheel(e)
     })
-
-    document.getElementById('reset').addEventListener('click', () => panzoom.zoom($(document).width()/5803))
+    //Reset viewing window
+    document.getElementById('reset').addEventListener('click', function(){ panzoom.zoom($(document).width()/5803); setTimeout(() => panzoom.pan(100, 100)); })
     </script>
  
-    <!--script>
-    $(document).ready(function(){
-      //Find way to run zoomContainer click before path click
-      $("#zoomContainer").click("mousedown",function(event) { $(this).data("initcoords", { x: event.clientX, y: event.clientY }); }); 
-        
-      $("path").click(function(event){
-        
-        var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
-      
-        if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
-          $(".artContainer").show();        
-          $("#artTitle").text($(event.target).attr("data-name"));
-          $("#artAuthor").text($(event.target).attr("data-author"));
-          $("#artMedium").text($(event.target).attr("data-medium"));        
-        }
-        $(this).data('initcoords', {x:-1, y:-1});
-      })
-      $(".hideArtInfo").click(function(){
-        $(".artContainer").hide();
-      })
-    })
-    </!--script-->
     <!--Intro Buttons-->
+    <!--Consoladate(?) to above script-->
     <script>
       $(document).ready(function() {
 
         $(".btn-secondary").click(function(){
           $(".info").show();
         })
+
+        $("#revealAll").click(function(){
+          $("path").toggle();
+        })
+
+        $.ajax({
+        type: "GET",
+        url: "https://www.wikipedia.org/w/api.php?action=query&list=search&srsearch=Craig%20Noone&format=json",
+        
+        success: function (data, textStatus, jqXHR) {
+            console.log(data);
+        },
+        error: function (errorMessage) {
+          "Could not retrieve text."
+        }
+    });
       });  
     </script>
   </body>

@@ -79,6 +79,15 @@
   background-color: rgba(0, 0, 0, .7);
 }
 
+.artThumbnail {
+  background-image: url("Assets/Images/uffizi.jpg");
+  background-size: 3000px;
+  background-position: 2000px 1550px;
+  height: 300px; 
+  width: 300px; 
+  margin: auto;
+}
+
 //Intro Container Content
 .intro-content {
   color: white;
