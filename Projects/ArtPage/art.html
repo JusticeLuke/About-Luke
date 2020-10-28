@@ -127,6 +127,14 @@
         <a onclick="getName('Cabin')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/Cabin.jpg"
             id="Cabin" alt="Cabin"></a>
       </div>      
+      <div class="grid-item">
+        <a onclick="getName('CthuLUKE')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/cthuluke.png"
+            id="CthuLUKE" alt="CthuLUKE"></a>
+      </div>  
+      <div class="grid-item">
+        <a onclick="getName('Raman Cart')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/ramanCart.png"
+            id="Raman Cart" alt="Raman Cart"></a>
+      </div>  
     </div>
   </main>
 
@@ -155,9 +163,9 @@
   <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
   
-  <script src="../../node_modules/OtherScripts/masonry.pkgd.min.js"></script>
+  <script src="../../node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
-  <script src="../../node_modules/OtherScripts/masonry.js"></script>
+  
  
   <!--Personal Scripts-->
   <script>
@@ -170,7 +178,8 @@
     });   
   </script>
 
-  <script src="../../node_modules/OtherScripts/get_art.js"></script>
+  <script src="ArtPageScripts/get_art.js"></script><!--Gets name of art and sets title-->
+  <script src="ArtPageScripts/gridDisplay.js"></script><!--Uses masonry to display art grid-->
   
   
   
