@@ -10346,7 +10346,9 @@ body {
   border: 0px !important; }
 
 .modal-title {
-  color: #ffea74; }
+  color: #ffea74;
+  font-weight: bold;
+  font-size: 2.5em; }
 
 @media (min-width: 576px) {
   .modal-dialog {
