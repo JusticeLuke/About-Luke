@@ -61,6 +61,16 @@ body {
   position: fixed !important;
 }
 
+.single-space {
+  line-height: 1;
+}
+
+.double-space {
+  line-height: 2;
+  position: relative; 
+  top: -.5em;
+}
+
 .nav-link{
     color: theme-color(primary) !important;
     font-size: 20px;
@@ -174,4 +184,15 @@ body {
     .projectTitle {
       margin-left: -135.5px;
     }
+  }
+
+  #copyButtonId {
+    background-color: rgba(0,0,0,0);
+  border: none;
+  color: $primary;
+  
+  }
+
+  #copyButtonId:hover {
+    text-decoration: underline;
   }

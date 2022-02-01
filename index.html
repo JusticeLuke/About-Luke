@@ -18,9 +18,9 @@
   </head>
 
   <body>
-
+<!--NAV BAR-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html"><img src="Images/ljlogo.png" width="30" height="30" alt="LJ Logo"></a>
+      <a class="navbar-brand" href="index.html"><img src="Images/ljlogo.png" width="30" height="30"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,8 +46,9 @@
         </form>
       </div>
     </nav>
-    <!-- Top Banner Slides -->
+    <!--END OF NAV BAR-->
 
+    <!-- Top Banner Slides -->
     <div class="banner">
       <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -57,24 +58,24 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="Projects/ArtPage/art.html"><img src="Images/banner2.jpg" class="d-block mw-100 banner-height" alt="Pencil sketch of dog"></a>
+            <a href="Projects/ArtPage/art.html"><img src="Images/banner2.jpg" class="d-block mw-100 banner-height" alt="..."></a>
             <div class="carousel-caption d-none d-md-block">
               <h3 class="font-weight-bold text-uppercase">CHECK OUT MY ART</h5>
-              <p>This is my most recent project using grids and jquery to display my porfolio in a sleek tile design.</p>
+              <p>Look through a responsive display using masonry grids and jquery to show off my porfolio in a sleek tile design.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="Images/banner1.jpg" class="d-block mw-100 banner-height" alt="Man typing on computer">
+            <img src="Images/banner1.jpg" class="d-block mw-100 banner-height" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h3 class="font-weight-bold text-uppercase">Hey guess what!</h5>
-              <p>I can also code in java, html, sql, and a plethora of other languages!</p>
+              <h3 class="font-weight-bold text-uppercase">ALWAYS LEARNING</h5>
+              <p>I am familar with java, python, html, sql, javascript, php and a plethora of frameworks and libraries!</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="Images/banner3.jpg" class="d-block mw-100 banner-height" alt="Busy New York street">
+            <img src="Images/banner3.jpg" class="d-block mw-100 banner-height" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h3 class="font-weight-bold text-uppercase">SUPER PROFESSIONAL</h5>
-              <p>Currently a placeholder till I get a professional headshot.</p>
+              <h3 class="font-weight-bold text-uppercase"></h5>
+              <p></p>
             </div>
           </div>
         </div>
@@ -88,20 +89,24 @@
         </a>
       </div>
     </div>
+<!--END OF BANNER-->
 
     <main role="main" class="container mt-5">
-      <div class="row"><!--row 1-->
+      <div class="row">
         <div class="col">
           <h1 class="display-2 text-center">About Lucas</h1>
-          <p class="lead">Hi, I'm Lucas. I love creating art and exploring technology, and this site is a way to bring those two things together! 
-            I currently work as a manager for the UGA field crew, but in my free time I love to draw. I've displayed some of 
-            my art under Projects/Art page! I am studying computer science, and have a few coding projects I'm proud of. They're on the projects page.
-            This site is still very much under construction, but look around, enjoy, and feel free to contact me!</p>
+          <p class="double-space">Hi, I am Lucas. I am passionate about creating art and exploring technology, and this site is a way to showcase the projects and art I am proud of! 
+            While working full time and pursuing a bachelor in <strong><em>Computer Science</em></strong>, I have been expanding my coding skill set. Feel free to view my 
+            <a href="Projects/ArtPage/art.html">art</a> or my project, <a href="Projects/PaintingPage/paint.html" data-toggle="tooltip" title="under construction">
+            painting with a painting</a>. I have experience working with a number of languages and technologies, such as <strong><em>html, css, javascript, python, java, json, 
+            </em></strong> and <strong><em>mySQL</em></strong> to name a few. On top of this I am a skilled artist, who knows the importance of <strong><em>functional design
+            </em></strong>, and <strong><em>accessibility</em></strong>. I am well versed in digital art, including vector graphics and tools like photoshop, as well as 
+            traditional mediums. I am graduating on June 30th, and seeking a full time position!</p>
         </div>
 
         <div class="col d-none d-md-block">
           <div class="text-center">
-            <img src="Images/ljlogo.png" class="" alt="LJ Logo">
+            <img src="Images/ljlogo.png">
           </div>
         </div>
       </div>
@@ -114,19 +119,16 @@
           <table class="contact w-100">
             <tr>
               <td><b>GMAIL</b>: </td>  
-              <td>jjusticeluke@gmail.com</td>
+              <!--Button has been styled as a link-->
+              <td><button id="copyButtonId">jjusticeluke@gmail.com</button></td>
             </tr>
             <tr>
               <td><b>GITHUB</b>: </td>  
-              <td><a href="ttps://github.com/JusticeLuke">JusticeLuke</a></td>
-            </tr>
-            <tr>
-              <td><b>DEVIANT ART</b>: </td>
-              <td><a href="https://www.deviantart.com/badattherapy">BadAtTherapy</a></td>
+              <td><a href="https://github.com/JusticeLuke" target="_blank" rel="noopener noreferrer">JusticeLuke</a></td>
             </tr>
             <tr>
               <td><b>LINKEDIN</b>: </td>
-              <td><a href="https://www.linkedin.com/in/lucas-justice-1990s">lucas-justice-1990s</a></td>
+              <td><a href="https://www.linkedin.com/in/lucas-justice-1990s" target="_blank" rel="noopener noreferrer">lucas-justice-1990s</a></td>
             </tr>
           </table>
         </div>
@@ -140,7 +142,7 @@
         <div class="col artPageCol">
             <a  href="Projects/ArtPage/art.html"><b>ART GRID DISPLAY</b></a>
             <div style="width:100%;height: 2px;background: white;"></div>
-            <img class="mw-100 pt-2"src="Images/artgridsample.PNG">
+            <img class="mw-100 pt-1"src="Images/artgridsample.PNG">
             <p>A collection of drawings, paintings, and digital art I've created over the years in a reactive display.</p> 
             <p id="infoGrid" style="display: none;">View my ever expanding portfolio all gathered in one space. Optimized for a
             variety of devices using a collaboration of <a href="https://bootstrap.com">bootstrap</a> and <a href="https://masonry.desandro.com/layout.html">masonry.</a> </p>  
@@ -149,7 +151,7 @@
         <div class="col paintPageCol ml-5">
           <a href="Projects/PaintingPage/paint.html"><b>DISSECTION OF THE TRIBUNA OF THE UFFIZI</b></a> 
           <div style="width:100%;height: 2px;background: white;"></div>       
-          <p >  Explore all the famous art, and people fantastically packed into one masterworked art piece.</p> 
+          <p >Explore all the famous art, and people fantastically packed into one masterworked art piece.</p> 
           <p id="infoPainting" style="display: none;">The Tribuna of the Uffizi has over 100 historically signficant figures and pieces depicted within it.
               Navigating all this infomation can be overwhelming, so I've tried to simplify the process. Each significant object has been overlayed
               with a svg hotspot. So as you glance through the many people, paintings, and sculptures, select it to learn more about the person or piece.
@@ -162,9 +164,11 @@
 
     <!-- Core JavaScript-->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script async src="https://cse.google.com/cse.js?cx=001947135288453699004:mpcsnkcyaop"></script>
+
+  <script src="indexScripts.js"></script>
 
     
   <script>
@@ -187,7 +191,19 @@
             $("#paintingIntro").text(($("#paintingIntro").text() == 'learn more...') ? 'collaspe' : 'learn more...').fadeIn();
         })
       }
-    });  
+    }); 
+    
+    /*$('#copyButtonId').click(function () { copyToClipboard("jjusticeluke@gmail.com"); });*/
+    $('#copyButtonId').tooltip({title: 'address copied', trigger: 'click', });
+    $('#copyButtonId').click( function () {
+      copyToClipboard("jjusticeluke@gmail.com"),
+      setTimeout(function() {
+        $('#copyButtonId').tooltip('hide');
+        }, 2000);
+
+      });
+
+    
   </script>
   </body>
 </html>
