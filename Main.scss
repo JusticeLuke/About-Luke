@@ -43,7 +43,7 @@ body {
     font-family: 'Saira Semi Condensed';
     color:theme-color-level(dark, -11);
     margin-bottom: 3%;
-    font-size: 24px;
+    font-size: 1.25em;
  
 }
 
@@ -85,13 +85,6 @@ body {
     min-width: 100vw;
     margin: auto;
 }
-
-.contact {
-    font-size: 24px;
-}
-.contact tr td {
-     padding-bottom: 1em;
- }
 
  .modal-content {
   background-color: rgba(0,0,0,0);

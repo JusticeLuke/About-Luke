@@ -10324,7 +10324,7 @@ body {
   font-family: 'Saira Semi Condensed';
   color: #e7e5f1;
   margin-bottom: 3%;
-  font-size: 24px; }
+  font-size: 1.25em; }
 
 .projectBody {
   padding-top: 4.3vh; }
@@ -10354,12 +10354,6 @@ body {
   max-height: 67vh;
   min-width: 100vw;
   margin: auto; }
-
-.contact {
-  font-size: 24px; }
-
-.contact tr td {
-  padding-bottom: 1em; }
 
 .modal-content {
   background-color: rgba(0, 0, 0, 0);
