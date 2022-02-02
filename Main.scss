@@ -43,7 +43,7 @@ body {
     font-family: 'Saira Semi Condensed';
     color:theme-color-level(dark, -11);
     margin-bottom: 3%;
-    
+    font-size: 24px;
  
 }
 
@@ -111,7 +111,7 @@ body {
    color: white;
  }
  .artPageCol, .paintPageCol{
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: transparentize($color: $dark, $amount: .75);
   padding: .5em;
 }
 /* clear fix */
@@ -184,15 +184,4 @@ body {
     .projectTitle {
       margin-left: -135.5px;
     }
-  }
-
-  #copyButtonId {
-    background-color: rgba(0,0,0,0);
-  border: none;
-  color: $primary;
-  
-  }
-
-  #copyButtonId:hover {
-    text-decoration: underline;
   }

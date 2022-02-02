@@ -20,30 +20,21 @@
   <body>
 <!--NAV BAR-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html"><img src="Images/ljlogo.png" width="30" height="30"></a>
+      <a title="home" class="navbar-brand" href="index.html" data-toggle="tooltip"><img src="Images/ljlogo.png" width="30" height="30"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="Projects/ArtPage/art.html">Art Gallery</a>
               <a class="dropdown-item" href="Projects/PaintingPage/paint.html">Painting within A Painting</a>  
             </div>
           </li>
         </ul>
-        <form class="form-inline mw-25">
-          <div class="Justiceluke.test">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-        </div>
-        </form>
       </div>
     </nav>
     <!--END OF NAV BAR-->
@@ -92,6 +83,7 @@
 <!--END OF BANNER-->
 
     <main role="main" class="container mt-5">
+      <!--Container holding About Luke, logo image, and contact sections-->
       <div class="row">
         <div class="col">
           <h1 class="display-2 text-center">About Lucas</h1>
@@ -103,35 +95,22 @@
             </em></strong>, and <strong><em>accessibility</em></strong>. I am well versed in digital art, including vector graphics and tools like photoshop, as well as 
             traditional mediums. I am graduating on June 30th, and seeking a full time position!</p>
         </div>
-
-        <div class="col d-none d-md-block">
-          <div class="text-center">
-            <img src="Images/ljlogo.png">
+        
+        <div class="col">
+          <div class="row d-none d-md-block text-center">            
+              <img src="Images/ljlogo.png">            
+          </div>     
+        
+          <div class="row mt-5">
+            <h1 class="display-2 w-100 text-center">Contact</h1> 
+            <div class="text-left pl-5 w-100">             
+                <p><b>GMAIL</b>:    <a id="copyButtonId" href="#">jjusticeluke@gmail.com</a></p>              
+                <p><b>GITHUB</b>:   <a href="https://github.com/JusticeLuke" target="_blank" rel="noopener noreferrer">JusticeLuke</a></p>              
+                <p><b>LINKEDIN</b>: <a href="linkedin.com/in/lucas-justice-808712230" target="_blank" rel="noopener noreferrer">lucas-justice</a></p>            
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="row"><!--row 2-->
-        <div class="col d-none d-md-block">
-        </div>
-        <div class="col">
-          <h1 class="display-2 text-center">Contact</h1>
-          <table class="contact w-100">
-            <tr>
-              <td><b>GMAIL</b>: </td>  
-              <!--Button has been styled as a link-->
-              <td><button id="copyButtonId">jjusticeluke@gmail.com</button></td>
-            </tr>
-            <tr>
-              <td><b>GITHUB</b>: </td>  
-              <td><a href="https://github.com/JusticeLuke" target="_blank" rel="noopener noreferrer">JusticeLuke</a></td>
-            </tr>
-            <tr>
-              <td><b>LINKEDIN</b>: </td>
-              <td><a href="https://www.linkedin.com/in/lucas-justice-1990s" target="_blank" rel="noopener noreferrer">lucas-justice-1990s</a></td>
-            </tr>
-          </table>
-        </div>
+
       </div>
       
       <div class="row  mw-100 text-center">
@@ -146,17 +125,18 @@
             <p>A collection of drawings, paintings, and digital art I've created over the years in a reactive display.</p> 
             <p id="infoGrid" style="display: none;">View my ever expanding portfolio all gathered in one space. Optimized for a
             variety of devices using a collaboration of <a href="https://bootstrap.com">bootstrap</a> and <a href="https://masonry.desandro.com/layout.html">masonry.</a> </p>  
-            <p id="gridIntro" class="addInfo">learn more...</p>          
+            <p id="gridIntro" class="addInfo">read more &#9660</p>          
         </div>
         <div class="col paintPageCol ml-5">
           <a href="Projects/PaintingPage/paint.html"><b>DISSECTION OF THE TRIBUNA OF THE UFFIZI</b></a> 
-          <div style="width:100%;height: 2px;background: white;"></div>       
+          <div style="width:100%;height: 2px;background: white;"></div>
+          <img class="mw-100 pt-1"src="Images/uffiziSnippet.jpg">       
           <p >Explore all the famous art, and people fantastically packed into one masterworked art piece.</p> 
           <p id="infoPainting" style="display: none;">The Tribuna of the Uffizi has over 100 historically signficant figures and pieces depicted within it.
               Navigating all this infomation can be overwhelming, so I've tried to simplify the process. Each significant object has been overlayed
               with a svg hotspot. So as you glance through the many people, paintings, and sculptures, select it to learn more about the person or piece.
               The Tribuna of Uffizi is a massive artwork, zoom in to get a closer look at an piece you like or to select one the smaller pieces. </p>
-              <p id="paintingIntro" class="addInfo">learn more...</p>
+              <p id="paintingIntro" class="addInfo">read more &#9660</p>
         </div>
       </div>
 
@@ -170,40 +150,29 @@
 
   <script src="indexScripts.js"></script>
 
-    
   <script>
-    
-    $('#gridIntro').on({
-      click: function(e) {
-        e.preventDefault();
-        $("#infoGrid").toggle();
-        $("#gridIntro").fadeOut(function () {
-            $("#gridIntro").text(($("#gridIntro").text() == 'learn more...') ? 'collaspe' : 'learn more...').fadeIn();
+    $('#gridIntro').click( function () {
+      $("#infoGrid").toggle();
+      $("#gridIntro").fadeOut(function () {
+            $("#gridIntro").text(($("#gridIntro").text().indexOf('read more') >= 0) ? 'collaspe \u25B2' : 'read more \u25BC').fadeIn();
         })
-      }
-    });  
-    
-    $('#paintingIntro').on({
-      click: function(e) {
-        e.preventDefault();
-        $("#infoPainting").toggle();
-        $("#paintingIntro").fadeOut(function () {
-            $("#paintingIntro").text(($("#paintingIntro").text() == 'learn more...') ? 'collaspe' : 'learn more...').fadeIn();
+    });
+
+    $('#paintingIntro').click( function () {
+      $("#infoPainting").toggle();
+      $("#paintingIntro").fadeOut(function () {
+            $("#paintingIntro").text(($("#paintingIntro").text().indexOf('read more') >= 0) ? 'collaspe \u25B2' : 'read more \u25BC').fadeIn();
         })
-      }
-    }); 
+    });
     
-    /*$('#copyButtonId').click(function () { copyToClipboard("jjusticeluke@gmail.com"); });*/
     $('#copyButtonId').tooltip({title: 'address copied', trigger: 'click', });
-    $('#copyButtonId').click( function () {
+    $('#copyButtonId').click( function (event) {
+      event.preventDefault();
       copyToClipboard("jjusticeluke@gmail.com"),
       setTimeout(function() {
         $('#copyButtonId').tooltip('hide');
         }, 2000);
-
-      });
-
-    
+      });    
   </script>
   </body>
 </html>

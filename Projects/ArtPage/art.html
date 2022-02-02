@@ -22,34 +22,24 @@
 
 <body>
 <!-- NAV BAR-->
-  <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="../../index.html"><img src="../../Images/ljlogo.png" width="30" height="30"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="navbar-toggler-icon"></div>
-    </button>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a title="home" class="navbar-brand" href="../../index.html" data-toggle="tooltip"><img src="../../Images/ljlogo.ico" width="30" height="30"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="../../index.html">Home <div class="sr-only">(current)</div></a>
-        </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Projects</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Art Gallery</a>
-            <a class="dropdown-item" href="../PaintingPage/paint.html">Painting within A Painting</a>            
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Art Gallery</a>
+          <a class="dropdown-item" href="../PaintingPage/paint.html">Painting within A Painting</a>  
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 <!-- END OF NAV BAR-->
   
   <div class="container my-5 pt-5">
@@ -60,6 +50,18 @@
   <main role="main" class="container">
     <div class="grid">
       <div class="grid-sizer">
+      </div>
+      <div class="grid-item">
+        <a onclick="getName('Ramen Cart Color')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/ramencartcolor.jpg"
+            id="Ramen Cart Color" alt="Ramen Cart Color"></a>
+      </div>
+      <div class="grid-item">
+        <a onclick="getName('Veteran Gnome')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/veteranGnome.png"
+            id="Veteran Gnome" alt="Veteran Gnome"></a>
+      </div>
+      <div class="grid-item">
+        <a onclick="getName('The Looters')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/Together@0.5x.png"
+            id="The Looters" alt="The Looters"></a>
       </div>
       <div class="grid-item">
         <a onclick="getName('The Matriarch')" data-toggle="modal" href="#imageModal"><img
@@ -77,6 +79,10 @@
         <a onclick="getName('Self')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/Self.jpg"
             id="Self" alt="Self"></a>
       </div>
+      <div class="grid-item">
+        <a onclick="getName('CthuLUKE')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/cthulukePotrait.png"
+            id="CthuLUKE" alt="CthuLUKE"></a>
+      </div>      
       <div class="grid-item">
         <a onclick="getName('Madonna')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/Madonna.jpg"
             id="Madonna" alt="Madonna"></a>
@@ -128,15 +134,7 @@
       <div class="grid-item">
         <a onclick="getName('Cabin')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/Cabin.jpg"
             id="Cabin" alt="Cabin"></a>
-      </div>      
-      <div class="grid-item">
-        <a onclick="getName('CthuLUKE')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/cthuluke.png"
-            id="CthuLUKE" alt="CthuLUKE"></a>
-      </div>  
-      <div class="grid-item">
-        <a onclick="getName('Raman Cart')" data-toggle="modal" data-target="#imageModal"><img src="../../Images/ramanCart.png"
-            id="Raman Cart" alt="Raman Cart"></a>
-      </div>  
+      </div>        
     </div>
   </main>
 
