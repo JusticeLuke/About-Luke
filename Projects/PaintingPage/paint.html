@@ -174,13 +174,12 @@
         $("#artTitle").text($(event.target).attr("data-name"));
         $("#artAuthor").text("Author: " + $(event.target).attr("data-author"));
         $("#artMedium").text($(event.target).attr("data-medium")); 
-      
+        
         $(".artThumbnail").css({"background-position-x": pathXpos, "background-position-y": pathYpos});   
         
-        //Grab wiki article
+        //UNDER CONSTRUCTION GRAB MOST RELEVANT ARTICLE
         $('.wikiArticle').text("Grabbing article...");
-          var searchObject = $(event.target).attr("data-name")+" "+$(event.target).attr("data-author");        
-
+          var searchObject = $(event.target).attr("data-name") + " (art)";
           var articleContainer = $('.wikiArticle');
         
           $.ajax({          
@@ -189,7 +188,7 @@
           dataType:'jsonp',
           data: {
                   //main parameters
-                  action: 'query',
+                  action: 'opensearch',
                   format: 'json',          
                   prop: 'extracts',
                       //parameters for extracts
