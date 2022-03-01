@@ -48,7 +48,7 @@
 .artContainer {
   margin-left: 70vw;
   color: white;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .5);
   position: fixed;
   display: none;
   z-index: 3;
@@ -77,6 +77,17 @@
 
 .hideArtInfo:hover {
   background-color: rgba(0, 0, 0, .7);
+}
+
+.outlineArt {
+  stroke:#ffffff;
+  stroke-width:10;
+  stroke-linecap:butt;
+  stroke-linejoin:miter;
+  stroke-opacity:1;
+  stroke-miterlimit:4;
+  stroke-dasharray:10,10;
+  stroke-dashoffset:0;
 }
 
 .artThumbnail {

@@ -35,10 +35,10 @@
             <br>-Bring up the collection list to highlight a specific work or group of works.           
           </p>
           <br>
-          <p><b>Major Issues:</b>
-            <br>Wikipedia API search is grabbing the wrong article. Some of the paintings featured share names with more famous works.
-            <br>Art thumbnail and zoom to object button return the wrong coordinates. Jquery does not have a way to account for when 
-            <br>an element has been transformed, like when a user zooms or pans.
+          <p><b>Under Contruction:</b>
+            <br>Using Wikipedia API to query the Tribuna of Uffizi page and grab the thumbnails they have for each work listed.
+            <br>Search/Sort function to find and highlight the relevant art from a list of art.
+            <br>Creating SVG hotspots for the remaining works and writing up text bites for each art piece.
           </p>
           <button type="button" class="btn btn-primary">Explore Project</button>
           <button type="button" class="btn btn-secondary">Learn More</button>       
@@ -46,14 +46,14 @@
     </section>
     
     <div class="artContainer">
-      <div class="artInfo p-2">
+      <div class="artInfo p-3">
+        <div class="artThumbnail"></div>
         <h1 id="artTitle"></h1>
         <div class="row text-center"><p id="artAuthor" class="col"></p><p id="artMedium" class="col"></p></div>
         <div class="text-center">
-          <div class="artThumbnail"></div>
-          <button id="zoomToObject" class="btn btn-primary mt-1">zoom to object</button>
+          <button id="highlightObject" class="btn btn-primary mt-3">HIGHLIGHT ART</button>
         </div>
-        <div class="w-100 h-25 overflow-auto mt-1 wikiArticle">
+        <div class="w-100 h-50 overflow-auto mt-1 wikiArticle">
           <!--Gets filled with text from wiki article-->
         </div>
       </div>     
@@ -152,32 +152,21 @@
     //Compares pointer position of last mouse movement(before pointer was pressed down) to pointer position when the
     //mouse is released. If the position has not changed then art container opens and gets info about clicked object.
     $("path").click(function(event){
-
+      $("path").removeClass("outlineArt");
       var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
 
-      //Grabs the transform values and applies it to the coordinates
-      var transformMatrix = $("#zoomElement").css("transform").match(/matrix.*\((.+)\)/);
-      transformMatrix = transformMatrix[1].split(', ');
-      scaleValue = transformMatrix[0];
-      transformX = transformMatrix[4];
-      transformY = transformMatrix[5];
-      console.log("matrix:" + transformMatrix);
-
-      //Position of selected element
-      var pathXpos = $(this).position().left;      
-      var pathYpos = $(this).position().top;
-      console.log("x:" + pathXpos);
-      console.log("y:" + pathYpos);
-
       if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
+
+        artInView = $(this);
+        artInView.removeClass("outlineArt");
         $(".artContainer").show();        
         $("#artTitle").text($(event.target).attr("data-name"));
-        $("#artAuthor").text("Author: " + $(event.target).attr("data-author"));
-        $("#artMedium").text($(event.target).attr("data-medium")); 
+        $("#artAuthor").text($(event.target).attr("data-author").toUpperCase());
+        $("#artMedium").text($(event.target).attr("data-medium").toUpperCase());    
         
-        $(".artThumbnail").css({"background-position-x": pathXpos, "background-position-y": pathYpos});   
-        
-        //UNDER CONSTRUCTION GRAB MOST RELEVANT ARTICLE
+        //UNDER CONSTRUCTION NEEDS TO GRAB THUMBNAIL OF THE RELEVANT ART STORED
+        //ON THE TRIBUNA OF UFFIZI WIKI PAGE
+        /*
         $('.wikiArticle').text("Grabbing article...");
           var searchObject = $(event.target).attr("data-name") + " (art)";
           var articleContainer = $('.wikiArticle');
@@ -209,22 +198,21 @@
           error: function (errorMessage) {
             "Could not retrieve text."
           }
-          });    
+          }); 
+          */   
       }
+      
       //Resets values for function that checks for click and drag
       $(this).data('initcoords', {x:-1, y:-1});
     });
     //Hide art container
     $(".hideArtInfo").click(function(){
       $(".artContainer").hide();
+      artInView.css({"border-style": "none", "border-width": "none"});
     });
-    //Zooms/Pans/Highlights the pre-selected object
-    $("#zoomToObject").click(function() {
-          //function to zoom on object
-          panzoom.zoom(.75);
-          //function to pan to object
-          panzoom.pan(e.clientY, e.clientX );
-          //Highlight selected object
+    //Highlights the pre-selected object
+    $("#highlightObject").click(function() {
+      artInView.toggleClass("outlineArt");
           
     });
     //Zoom on pointer location
