@@ -10428,5 +10428,16 @@ body {
 
   .projectTitle {
     margin-left: -135.5px; } }
+@media (max-width: 575px) {
+  .dropdown-toggle {
+    display: none; }
+
+  .dropdown-menu {
+    display: block;
+    background-color: #372a8c;
+    border: none; }
+
+  .dropdown-item {
+    color: #ffea74; } }
 
 /*# sourceMappingURL=main.css.map */

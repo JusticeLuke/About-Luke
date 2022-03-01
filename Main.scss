@@ -178,3 +178,17 @@ body {
       margin-left: -135.5px;
     }
   }
+//Alters CSS for drop menu items in mobile
+  @media (max-width: 575px) {
+    .dropdown-toggle {
+      display: none;
+    }
+    .dropdown-menu {
+      display: block;
+      background-color: $dark;
+      border: none;
+    }
+    .dropdown-item {
+      color: $primary;
+    }
+  }
