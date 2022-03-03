@@ -10421,14 +10421,14 @@ body {
   padding: 0 .5em 0 .5em;
   top: 0; }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .projectLink,
   .projectTitle {
     font-size: 1.25em; }
 
   .projectTitle {
     margin-left: -135.5px; } }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .dropdown-toggle {
     display: none; }
 

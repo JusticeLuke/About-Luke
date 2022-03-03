@@ -168,7 +168,7 @@ body {
     top: 0;
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: 767px) {
     .projectLink,
     .projectTitle {
       font-size: 1.25em;
@@ -179,7 +179,7 @@ body {
     }
   }
 //Alters CSS for drop menu items in mobile
-  @media (max-width: 575px) {
+  @media (max-width: 767px) {
     .dropdown-toggle {
       display: none;
     }
