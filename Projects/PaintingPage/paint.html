@@ -45,19 +45,19 @@
       </div>      
     </section>
     
-    <div class="artContainer">
-      <div class="artInfo p-3">
+    <div class="artContainer row">
+      <div class="artInfo col-lg p-0">
         <div class="artThumbnail"></div>
         <h1 id="artTitle"></h1>
         <div class="row text-center"><p id="artAuthor" class="col"></p><p id="artMedium" class="col"></p></div>
         <div class="text-center">
-          <button id="highlightObject" class="btn btn-primary mt-3">HIGHLIGHT ART</button>
+          <button id="highlightObject" class="btn btn-primary mt-3">HIGHLIGHT</button>
         </div>
-        <div class="w-100 h-50 overflow-auto mt-1 wikiArticle">
+        <div class="h-50 overflow-auto mt-1 wikiArticle">
           <!--Gets filled with text from wiki article-->
         </div>
       </div>     
-      <div class="hideArtInfo"><p>&#9658</p></div>  
+      <div class="hideArtInfo col-sm-auto"><p>&#9658</p></div>  
     </div>
     
 
@@ -154,15 +154,30 @@
     $("path").click(function(event){
       $("path").removeClass("outlineArt");
       var initCoords = $("#zoomContainer").data("initcoords") || { x: 0, y: 0 };
+      
+      //Check if mouse click is on the left or right screen, then open the art
+      //container div on the opposite size
+      if (event.clientX <= ($(window).width())/2) {
+        $(".hideArtInfo").addClass("hideArtInfoToLeft");
+        $(".artContainer").addClass("artContainerToRight");
 
+        $(".hideArtInfo").removeClass("hideArtInfoToRight");
+        $(".artContainer").removeClass("artContainerToLeft");
+      } else {
+        $(".hideArtInfo").addClass("hideArtInfoToRight");
+        $(".artContainer").addClass("artContainerToLeft");
+
+        $(".hideArtInfo").removeClass("hideArtInfoToLeft");
+        $(".artContainer").removeClass("artContainerToRight");
+      }
       if (event.clientX === initCoords.x && event.clientY === initCoords.y) {
 
         artInView = $(this);
         artInView.removeClass("outlineArt");
-        $(".artContainer").show();        
+        $(".artContainer").css("display","flex");        
         $("#artTitle").text($(event.target).attr("data-name"));
-        $("#artAuthor").text($(event.target).attr("data-author").toUpperCase());
-        $("#artMedium").text($(event.target).attr("data-medium").toUpperCase());    
+        $("#artAuthor").text($(event.target).attr("data-author"));
+        $("#artMedium").text($(event.target).attr("data-medium"));    
         
         //UNDER CONSTRUCTION NEEDS TO GRAB THUMBNAIL OF THE RELEVANT ART STORED
         //ON THE TRIBUNA OF UFFIZI WIKI PAGE

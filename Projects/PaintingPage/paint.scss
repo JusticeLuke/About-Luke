@@ -46,7 +46,6 @@
 
 //Art Info Display
 .artContainer {
-  margin-left: 70vw;
   color: white;
   background-color: rgba(0, 0, 0, .5);
   position: fixed;
@@ -56,27 +55,42 @@
   height: 100%;
 }
 
+.artContainerToLeft {
+  margin-right: 70vw;
+}
+
+.artContainerToRight {
+  margin-left: 70vw;
+}
+
 .artContainer div h1 {
   text-align: center;
 }
 
 .artInfo {
-  width: 90%;
-  height: 100vh;
-  float: right;
+  
 }
 
 .hideArtInfo {
+  width: 2em;
   cursor: pointer;
   color: white;
-  height: 100vh;
-  padding: 45vh 5px 5px 5px;
+  //height: 100vh;
+  padding: 45vh;
   display: inline-block;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .65);
+}
+
+.hideArtInfoToLeft {
+  
+}
+
+.hideArtInfoToRight {
+  
 }
 
 .hideArtInfo:hover {
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .outlineArt {
@@ -93,10 +107,8 @@
 .artThumbnail {
   background-image: url("Assets/Images/uffizi.jpg");
   //background-size: 3000px;
-  background-position: 2000px 1550px;
   height: 10vw; 
-  width: 25vw; 
-  margin: auto;
+  
 }
 
 //Intro Container Content
